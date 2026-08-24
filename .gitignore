@@ -41,3 +41,9 @@ backend/prisma/dev.db-journal
 # Optional: ignore lock files (if not using them for consistency)
 # package-lock.json
 # yarn.lock
+
+# AgentForge (control plane; do not commit secrets or run state)
+agentforge/.env
+agentforge/.data/
+agentforge/logs/
+agentforge/node_modules/

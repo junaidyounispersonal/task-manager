@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  agentforge:
+    name: AgentForge tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: agentforge
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: npm
+          cache-dependency-path: agentforge/package-lock.json
+      - run: npm ci
+      - run: npm test
+
+  frontend:
+    name: Frontend lint and build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+        continue-on-error: true # pre-existing frontend lint debt; AgentForge lints changed files locally
+      - run: npm run build

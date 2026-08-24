@@ -1,0 +1,24 @@
+{
+  "name": "agentforge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Human-in-the-loop AI software engineering control plane. Project-agnostic; this Task Manager is target #1.",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node src/index.js serve",
+    "serve": "node src/index.js serve",
+    "test": "node --test tests/issue-parsing.test.js tests/issue-to-plan.test.js tests/approval-and-pr.test.js tests/permissions.test.js tests/pr-review.test.js tests/ci-diagnosis.test.js tests/webhooks-and-errors.test.js tests/config-logging.test.js tests/error-handling.test.js",
+    "approve": "node src/index.js approve",
+    "retry": "node src/index.js retry",
+    "process-issue": "node src/index.js process-issue",
+    "doctor": "node src/index.js doctor"
+  },
+  "dependencies": {
+    "@octokit/rest": "^21.1.1",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2"
+  }
+}

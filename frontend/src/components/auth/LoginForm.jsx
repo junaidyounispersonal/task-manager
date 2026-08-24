@@ -4,6 +4,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import Button from '../common/Button';
 import Input from '../common/Input';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
+import './styles/auth.css'; // Import the auth styles
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -102,7 +103,7 @@ const LoginForm = () => {
         </div>
 
         {/* Form */}
-        <div className="card p-8">
+        <div className="card p-8 glassmorphism fade-in">
           {authError && (
             <div className="mb-4 p-3 bg-red-100 border border-red-300 text-red-700 rounded-lg text-sm">
               {authError}
@@ -162,7 +163,7 @@ const LoginForm = () => {
             <Button
               type="submit"
               variant="primary"
-              className="w-full"
+              className="w-full glassmorphism"
               loading={isSubmitting}
               disabled={isSubmitting}
             >

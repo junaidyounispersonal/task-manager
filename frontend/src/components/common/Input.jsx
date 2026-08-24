@@ -10,7 +10,10 @@ const Input = ({
 }) => {
   const inputClasses = clsx(
     'input-field',
-    error && 'border-red-300 focus:border-red-500 focus:ring-red-500',
+    'transition-all duration-200 hover:shadow-md',
+    error ? 
+      'border-red-300 focus:border-red-500 focus:ring focus:ring-red-500 focus:pulse-blue' :
+      'border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:pulse-blue',
     className
   );
 
