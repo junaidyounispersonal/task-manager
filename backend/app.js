@@ -11,7 +11,7 @@ const app = express();
 app.use(helmet());
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-frontend-domain.com'] 
+    ? ['https://task-manager-production-d0dc.up.railway.app'] 
     : ['http://localhost:3000'],
   credentials: true
 }));
@@ -40,7 +40,7 @@ app.use('/api/comments', require('./routes/comments'));
 app.use('/api/users', require('./routes/users'));
 
 // copilot route
-app.use('/copilotkit', require('./routes/copilotkit'));
+//app.use('/copilotkit', require('./routes/copilotkit'));
 
 
 // Error handling middleware

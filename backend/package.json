@@ -1,12 +1,12 @@
 {
-  "name": "backend",
+  "name": "task-manager-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "prisma generate && nodemon server.js",
-    "build":"prisma generate && prisma db push",
-    "postinstall": "prisma generate",
+    "dev": "nodemon server.js",
+    "build": "npm install && npx prisma generate",
+    "postinstall": "npx prisma generate",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
     "db:pull": "prisma db pull",
@@ -14,7 +14,8 @@
     "test": "node --test test/*.test.js"
   },
   "engines": {
-    "node": "18.x"
+    "node": "18.x",
+    "npm": "9.x"
   },
   "prisma": {
     "seed": "node prisma/seed.js"
@@ -22,7 +23,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Task Manager Backend API",
   "dependencies": {
     "@copilotkit/runtime": "^1.9.1",
     "@prisma/client": "^6.10.1",

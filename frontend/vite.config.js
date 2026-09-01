@@ -9,6 +9,10 @@ export default defineConfig({
     port: 3000,
     open: true,
   },
+  preview: {
+    allowedHosts: ['task-manager-production-d0dc.up.railway.app'],
+    port:8000,
+  },
   build: {
     outDir: 'dist',
     sourcemap: true,
